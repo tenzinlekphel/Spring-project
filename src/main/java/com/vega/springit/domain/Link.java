@@ -27,8 +27,4 @@ public class Link extends Auditable {
     // comments
     @OneToMany
     private List<Comment> comments = new ArrayList<>();
-
-
-
-
 }
