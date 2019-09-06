@@ -19,9 +19,10 @@ public class SpringitApplication {
         SpringApplication.run(SpringitApplication.class, args);
     }
 
+
     @Bean
-    CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
-        return args -> {
-        };
+    PrettyTime prettyTime() {
+        return new PrettyTime();
     }
+
 }
