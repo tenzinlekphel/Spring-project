@@ -2,6 +2,8 @@ package com.vega.springit.service;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.BeansException;
+
 
 public class BeanUtil implements ApplicationContextAware {
 

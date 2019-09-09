@@ -10,19 +10,19 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
+import org.ocpsoft.prettytime.PrettyTime;
 
 @SpringBootApplication
 public class SpringitApplication {
 
     private static final Logger log = LoggerFactory.getLogger(SpringitApplication.class);
+
     public static void main(String[] args) {
         SpringApplication.run(SpringitApplication.class, args);
     }
-
 
     @Bean
     PrettyTime prettyTime() {
         return new PrettyTime();
     }
-
 }

@@ -1,7 +1,7 @@
 package com.vega.springit.domain;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
-import lombok.Data;
+import com.vega.springit.service.BeanUtil;
+import lombok.*;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.ocpsoft.prettytime.PrettyTime;
@@ -22,7 +22,10 @@ import java.time.ZoneId;
 
 @Entity
 @Data
+@Getter @Setter
 @NoArgsConstructor
+@RequiredArgsConstructor
+@ToString
 public class Link extends Auditable {
     @Id
     @GeneratedValue
@@ -33,7 +36,7 @@ public class Link extends Auditable {
     private String url;
 
     // comments
-    @OneToMany
+    @OneToMany(mappedBy = "link")
     private List<Comment> comments = new ArrayList<>();
 
 
