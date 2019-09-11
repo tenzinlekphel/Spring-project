@@ -18,7 +18,11 @@ import java.util.Optional;
 
 @Controller
 public class LinkController {
+
+    private static final Logger logger = LoggerFactory.getLogger(LinkController.class);
+
     private LinkRepository linkRepository;
+    private LinkService linkService;
 
     public LinkController(LinkRepository linkRepository) {
         this.linkRepository = linkRepository;
