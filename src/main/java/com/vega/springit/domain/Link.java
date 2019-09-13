@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotEmpty;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -30,8 +31,12 @@ public class Link extends Auditable {
     @Id
     @GeneratedValue
     private Long id;
+
     @NonNull
+    @NotEmpty(message="Please enter a title")
     private String title;
+
+
     @NonNull
     private String url;
 

@@ -36,11 +36,12 @@ public class LinkController {
 
     @GetMapping("/link/{id}")
     public String read(@PathVariable Long id, Model model) {
-        Optional<Link> link = linkRepository.findById(id);
-        if ( link.isPresent() ) {
+        Optional<Link> link = linkService.findById(id);
+        if( link.isPresent() ) {
             model.addAttribute("link", link.get());
+            model.addAttribute("success", model.containsAttribute("success"));
             return "link/view";
-        } else{
+        } else {
             return "redirect:/";
         }
     }
